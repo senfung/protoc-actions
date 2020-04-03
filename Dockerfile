@@ -3,16 +3,18 @@ FROM golang:stretch
 RUN apt-get update && \
     apt-get -y install git unzip build-essential autoconf libtool
 
-RUN git clone https://github.com/google/protobuf.git && \
-    cd protobuf && \
-    ./autogen.sh && \
-    ./configure --prefix=/usr && \
-    make && \
-    make install && \
-    ldconfig && \
-    make clean && \
-    cd .. && \
-    rm -r protobuf
+# RUN git clone https://github.com/google/protobuf.git && \
+#     cd protobuf && \
+#     ./autogen.sh && \
+#     ./configure --prefix=/usr && \
+#     make && \
+#     make install && \
+#     ldconfig && \
+#     make clean && \
+#     cd .. && \
+#     rm -r protobuf
+
+RUN apt-get -y install protobuf-compiler
 
 # NOTE: for now, this docker image always builds the current HEAD version of
 # gRPC.  After gRPC's beta release, the Dockerfile versions will be updated to
@@ -31,9 +33,9 @@ RUN protoc --version
 # Install protoc-gen-go
 
 
-RUN git config --global url."git@gitlab.com:".insteadOf "https://gitlab.com/"
+# RUN git config --global url."git@gitlab.com:".insteadOf "https://gitlab.com/"
 
-RUN git config --global url."git@github.com:".insteadOf "https://github.com/"
+# RUN git config --global url."git@github.com:".insteadOf "https://github.com/"
 
 COPY "entrypoint.sh" "/entrypoint.sh"
 
