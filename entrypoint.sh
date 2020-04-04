@@ -10,14 +10,14 @@ mkdir $2
 ls
 pwd
 find . ! -name . -prune ! -name $2 -exec mv {} $2/ \;
-echo "=======MOVIED========"
-ls ./$
+echo "=======MOVED========"
+ls
 echo "=======CHECK========"
 ls ./$2
 echo "=======GO IN========"
 cd ./$2
-ls
 pwd
+ls
 sh -c "protoc $1"
 echo "=======EXECUTED========"
 echo "=======BACK OUT+======="
