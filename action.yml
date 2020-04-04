@@ -7,7 +7,7 @@ inputs:
     required: true
   parent:
     description: "Parent Directory for relative protc generation"
-    default: workspace
+    default: proto
     required: false
 outputs:
   success: # id of output
