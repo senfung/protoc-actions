@@ -10,8 +10,6 @@ mkdir $2
 ls
 pwd
 find . ! -name . -prune ! -name $2 -exec mv {} $2/ \;
-echo "=======MOVED========"
-ls
 echo "=======CHECK========"
 ls ./$2
 echo "=======GO IN========"
@@ -24,3 +22,4 @@ echo "=======BACK OUT+======="
 mv * ../
 cd ..
 pwd
+ls
