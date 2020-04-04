@@ -14,6 +14,16 @@ echo "=======GO IN========"
 cd ./$2
 pwd
 ls
+echo "=======VERIFY PATH========"
+cd ..
+pwd
+cd protoc-go-actions
+pwd
+cd testProto
+pwd
+cd A
+pwd
+ls
 cat ../protoc-go-actions/testProto/A/a.proto
 sh -c "protoc $1"
 echo "=======EXECUTED========"
