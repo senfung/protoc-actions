@@ -5,7 +5,7 @@ inputs:
   path:
     description: "Path and arguments for protoc"
     required: true
-  parentDir:
+  parent:
     description: "Parent Directory for relative protc generation"
     default: workspace
     required: false
