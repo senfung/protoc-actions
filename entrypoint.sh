@@ -11,7 +11,7 @@ ls
 pwd
 find . ! -name . -prune ! -name $2 -exec mv {} $2/ \;
 echo "==============="
-cd github/workspace/$DUMDIR
+cd github/workspace/$2
 ls
 pwd
 sh -c "protoc $1"
