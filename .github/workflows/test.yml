@@ -10,7 +10,9 @@ jobs:
       - name: Test Protoc
         uses: ./ # Uses an action in the root directory
         with:
-          path: --proto_path=../proto/proto --go_out=./proto --go_opt=paths=source_relative ../proto/proto/A/A.proto
+          path: --proto_path=../proto/testProto --go_out=./proto --go_opt=paths=source_relative ../proto/testProto/A/A.proto
           parent: proto
       - name: Check Result
-        run: ls ./proto/A
+				run: |
+				ls ./testProto/A
+				cat ./testProto/A/A.pb.go
