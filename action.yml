@@ -17,7 +17,7 @@ runs:
   image: "Dockerfile"
   args:
     - ${{ inputs.path }}
-    - ${{ inputs.parentDir }}
+    - ${{ inputs.parent }}
 branding:
   icon: "aperture"
   color: "green"
