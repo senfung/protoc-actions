@@ -1,18 +1,22 @@
-name: 'Protoc action'
-description: 'Action for generate from client and server from protofiles'
-author: 'PxyUp'
+name: "Protoc action"
+description: "Action for generate from client and server from protofiles"
+author: "PxyUp"
 inputs:
   path:
-    description: 'Path and arguments for protoc'
+    description: "Path and arguments for protoc"
     required: true
+  parentDir:
+    description: "Parent Directory for relative protc generation"
+    required: false
 outputs:
   success: # id of output
-    description: 'Success'
+    description: "Success"
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: "docker"
+  image: "Dockerfile"
   args:
     - ${{ inputs.path }}
+    - ${{ inputs.parentDir }}
 branding:
-  icon: 'aperture'
-  color: 'green'
+  icon: "aperture"
+  color: "green"

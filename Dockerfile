@@ -19,6 +19,11 @@ RUN go get github.com/golang/protobuf/protoc-gen-go
 RUN cp /go/bin/protoc-gen-go /usr/bin/
 RUN protoc --version
 
+ENV PARENTDIR $parentDir
+RUN echo $PARENTDIR
+
+WORKDIR /CyclopsProto
+
 COPY "entrypoint.sh" "/entrypoint.sh"
 
 ENTRYPOINT ["/entrypoint.sh"]
