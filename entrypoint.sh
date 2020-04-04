@@ -5,14 +5,12 @@ pwd
 echo $1
 echo $2
 
-cd ..
-mv workspace $2
-ls
-cd $2
+mkdir $2
+find . ! -name . -prune ! -name $2 -exec mv {} $2/ \;
+cd $DUMDIR
 pwd
-
 sh -c "protoc $1"
 
+mv * ../
 cd ..
-mv $2 workspace
-cd workspace
+pwd
