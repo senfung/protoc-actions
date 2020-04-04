@@ -13,6 +13,6 @@ jobs:
           path: --proto_path=../proto/testProto --go_out=./proto --go_opt=paths=source_relative ../proto/testProto/A/A.proto
           parent: proto
       - name: Check Result
-				run: |
-				ls ./testProto/A
-				cat ./testProto/A/A.pb.go
+        run: |
+          ls ./testProto/A
+          cat ./testProto/A/A.pb.go
