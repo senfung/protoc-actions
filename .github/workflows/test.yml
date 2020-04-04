@@ -7,11 +7,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Test Protoc
+      - name: Test Protoc A
         uses: ./ # Uses an action in the root directory
         with:
-          path: --proto_path=../proto/testProto --go_out=./testProto --go_opt=paths=source_relative ../proto/testProto/A/A.proto
-          # parent: proto
+          path: --proto_path=../ --go_out=../ --go_opt=paths=source_relative ../protoc-go-actions/testProto/A/a.proto
+          parent: protoc-go-actions
+      - name: Test Protoc B
+        uses: ./ # Uses an action in the root directory
+        with:
+          path: --proto_path=../ --go_out=../ --go_opt=paths=source_relative ../protoc-go-actions/testProto/B/b.proto
+          parent: protoc-go-actions
       - name: Check Result
         run: |
           ls ./testProto/A

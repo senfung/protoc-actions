@@ -4,7 +4,7 @@ package B;
 
 option go_package = "github.com/charlie4284/prototest/build/gen/B";
 
-import "A/A.proto"; //working
+import "protoc-go-actions/testProto/A/A.proto"; //working
 
 import "google/protobuf/timestamp.proto";
 
