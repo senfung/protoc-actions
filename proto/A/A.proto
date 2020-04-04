@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package A;
+
+option go_package = "github.com/charlie4284/prototest/build/gen/A";
+
+message aMsg {
+    string message = 1;
+}
+
+service AService {
+    rpc Send(aMsg) returns (aMsg);
+}

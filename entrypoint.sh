@@ -2,5 +2,6 @@
 
 set -e
 pwd
-ls
+echo $1
+echo $2
 sh -c "protoc $*"

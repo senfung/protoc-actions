@@ -7,11 +7,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Hello world action step
+      - name: Test Proto
         uses: ./ # Uses an action in the root directory
-        id: hello
         with:
-          who-to-greet: "Mona the Octocat"
-      # Use the output from the `hello` step
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
+					path: --proto_path=. --go_out=. --go_opt=paths=source_relative ./A/A.proto
+					parentDir: CyclopsProto
+			- name: Check Result
+        run: ls
