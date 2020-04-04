@@ -16,8 +16,7 @@ echo "=======GO IN========"
 cd ./$2
 pwd
 ls
-ls ./testProto
-ls ./testProto/A
+cat ../protoc-go-actions/testProto/A/a.proto
 sh -c "protoc $1"
 echo "=======EXECUTED========"
 echo "=======BACK OUT+======="
