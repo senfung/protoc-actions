@@ -17,9 +17,9 @@ ls
 echo "=======VERIFY PATH========"
 cd ..
 pwd
+protoc --proto_path=. --go_out=. --go_opt=paths=source_relative ./protoc-go-actions/testProto/A/a.proto
 cd protoc-go-actions
 pwd
-protoc --proto_path=../ --go_out=../ --go_opt=paths=source_relative ../protoc-go-actions/testProto/A/a.proto
 # cd testProto
 # pwd
 # cd A
