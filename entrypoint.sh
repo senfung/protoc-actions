@@ -12,5 +12,7 @@ cd ./$2
 sh -c "protoc $1"
 
 mv * ../
+mv .* ../ || :
+
 cd ..
 rm -rf $2
