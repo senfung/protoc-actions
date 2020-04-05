@@ -19,11 +19,11 @@ cd ..
 pwd
 cd protoc-go-actions
 pwd
-cd testProto
-pwd
-cd A
-pwd
-ls
+# cd testProto
+# pwd
+# cd A
+# pwd
+# ls
 cat ../protoc-go-actions/testProto/A/a.proto
 sh -c "protoc $1"
 echo "=======EXECUTED========"
