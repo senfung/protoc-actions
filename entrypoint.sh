@@ -25,7 +25,7 @@ pwd
 # cd A
 # pwd
 # ls
-cat ../protoc-go-actions/testProto/A/a.proto
+cat ../protoc-go-actions/testProto/A/A.proto
 sh -c "protoc $1"
 echo "=======EXECUTED========"
 echo "=======BACK OUT+======="
