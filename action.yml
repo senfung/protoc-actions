@@ -1,6 +1,6 @@
-name: "Protoc action"
-description: "Action for generate from client and server from protofiles"
-author: "PxyUp"
+name: "Protoc Go Action"
+description: "Action for compile protofiles for golang"
+author: "senfung"
 inputs:
   path:
     description: "Path and arguments for protoc"

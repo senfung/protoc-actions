@@ -20,4 +20,5 @@ jobs:
       - name: Check Result
         run: |
           ls ./testProto/A
-          cat ./testProto/A/A.pb.go
+          ls ./testProto/B
+          cat ./testProto/B/B.pb.go
