@@ -1,18 +1,23 @@
-name: 'Protoc action'
-description: 'Action for generate from client and server from protofiles'
-author: 'PxyUp'
+name: "Protoc Go Action"
+description: "Action for compile protofiles for golang"
+author: "senfung"
 inputs:
   path:
-    description: 'Path and arguments for protoc'
+    description: "Path and arguments for protoc"
     required: true
+  parent:
+    description: "Parent Directory for relative protc generation"
+    default: proto
+    required: false
 outputs:
   success: # id of output
-    description: 'Success'
+    description: "Success"
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: "docker"
+  image: "Dockerfile"
   args:
     - ${{ inputs.path }}
+    - ${{ inputs.parent }}
 branding:
-  icon: 'aperture'
-  color: 'green'
+  icon: "aperture"
+  color: "green"

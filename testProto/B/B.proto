@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package B;
+
+option go_package = "github.com/charlie4284/prototest/build/gen/B";
+
+import "protoc-go-actions/testProto/A/A.proto"; //working
+
+import "google/protobuf/timestamp.proto";
+
+message bMsg {
+    string message = 1;
+    google.protobuf.Timestamp last_updated = 2;
+}
+
+service BService {
+    rpc Send(bMsg) returns (bMsg);
+    rpc SendA(A.aMsg) returns (A.aMsg);
+}
