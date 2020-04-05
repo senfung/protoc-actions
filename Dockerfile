@@ -20,4 +20,4 @@ RUN cp /go/bin/protoc-gen-go /usr/bin/
 RUN protoc --version
 
 COPY "entrypoint.sh" "/entrypoint.sh"
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["sh", "/entrypoint.sh"]
