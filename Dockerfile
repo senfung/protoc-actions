@@ -19,5 +19,7 @@ RUN go get github.com/golang/protobuf/protoc-gen-go
 RUN cp /go/bin/protoc-gen-go /usr/bin/
 RUN protoc --version
 
+RUN go install github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger github.com/golang/protobuf/protoc-gen-go
+
 COPY "entrypoint.sh" "/entrypoint.sh"
 ENTRYPOINT ["sh", "/entrypoint.sh"]
