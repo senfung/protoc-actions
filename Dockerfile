@@ -14,12 +14,12 @@ RUN rm -f $PROTOC_ZIP
 # build a specific version.
 
 RUN go get google.golang.org/grpc
+RUN go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway
+RUN go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger
 RUN go get github.com/golang/protobuf/protoc-gen-go
 
 RUN cp /go/bin/protoc-gen-go /usr/bin/
 RUN protoc --version
-
-RUN go install github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger github.com/golang/protobuf/protoc-gen-go
 
 COPY "entrypoint.sh" "/entrypoint.sh"
 ENTRYPOINT ["sh", "/entrypoint.sh"]
