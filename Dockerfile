@@ -13,9 +13,13 @@ RUN rm -f $PROTOC_ZIP
 # gRPC.  After gRPC's beta release, the Dockerfile versions will be updated to
 # build a specific version.
 
+WORKDIR /app
+RUN go mod init github.com/senfung/Proto
 RUN go get google.golang.org/grpc
-RUN go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway
-RUN go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger
+# RUN go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway
+# RUN go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger
+RUN go get -u github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway
+RUN go get -u github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2
 RUN go get github.com/golang/protobuf/protoc-gen-go
 
 RUN cp /go/bin/protoc-gen-go /usr/bin/
